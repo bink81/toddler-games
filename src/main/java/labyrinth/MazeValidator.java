@@ -2,7 +2,7 @@ package labyrinth;
 
 import java.util.List;
 
-public class LabyrinthValidator {
+public class MazeValidator {
 	// implementation of a graph algorithm to count connected components
 	public static int numberOfDisjointSections(final List<Integer>[] adjencyMatrix) {
 		boolean[] isNodeVisited = new boolean[adjencyMatrix.length];

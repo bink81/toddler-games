@@ -9,7 +9,7 @@ import java.util.Scanner;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LabyrinthValidatorTest {
+public class MazeValidatorTest {
 
 	@Test
 	public void testNumberOfDisjointSections1() throws Exception {
@@ -62,7 +62,7 @@ public class LabyrinthValidatorTest {
 				adj[x - 1].add(y - 1);
 				adj[y - 1].add(x - 1);
 			}
-			return LabyrinthValidator.numberOfDisjointSections(adj);
+			return MazeValidator.numberOfDisjointSections(adj);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			return 666;
