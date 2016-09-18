@@ -1,10 +1,13 @@
 package labyrinth;
 
+import org.junit.Assert;
+
 public class MazeDisplayer {
 
 	private final boolean[][] maze;
 
 	public MazeDisplayer(boolean[][] maze) {
+		Assert.assertNotNull("maze must not be null", maze);
 		this.maze = maze;
 	}
 
