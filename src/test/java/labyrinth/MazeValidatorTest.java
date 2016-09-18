@@ -62,7 +62,7 @@ public class MazeValidatorTest {
 				adj[x - 1].add(y - 1);
 				adj[y - 1].add(x - 1);
 			}
-			return MazeValidator.numberOfDisjointSections(adj);
+			return new MazeValidator(adj).numberOfDisjointSections();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			return 666;
