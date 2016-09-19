@@ -1,13 +1,13 @@
 package labyrinth;
 
-import org.junit.Assert;
+import com.google.common.base.Preconditions;
 
 public class MazeDisplayer {
 
 	private final boolean[][] maze;
 
 	public MazeDisplayer(boolean[][] maze) {
-		Assert.assertNotNull("maze must not be null", maze);
+		Preconditions.checkNotNull(maze, "maze must not be null");
 		this.maze = maze;
 	}
 
