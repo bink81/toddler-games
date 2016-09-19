@@ -34,11 +34,11 @@ public class MazeValidatorTest {
 
 	/**
 	 * @param fileName
-	 *            the name of a file with a graph representation
+	 *          the name of a file with a graph representation
 	 * 
-	 *            File format: the first line contains a number of vertices n
-	 *            and edges m. The following lines contain connected vertices u
-	 *            and v. Constraints: 2 <= n; 1 <= m; 1 <= u, v <= n; u != v
+	 *          File format: the first line contains a number of vertices n and
+	 *          edges m. The following lines contain connected vertices u and v.
+	 *          Constraints: 2 <= n; 1 <= m; 1 <= u, v <= n; u != v
 	 * 
 	 * @return the number of disjoint sections
 	 */
@@ -51,21 +51,20 @@ public class MazeValidatorTest {
 			scanner = new Scanner(file);
 			int n = scanner.nextInt();
 			int m = scanner.nextInt();
-			List<Integer>[] adj = new ArrayList[n];
+			List<List<Integer>> adj = new ArrayList<>();
 			for (int i = 0; i < n; i++) {
-				adj[i] = new ArrayList<Integer>();
+				adj.add(new ArrayList<Integer>());
 			}
 			for (int i = 0; i < m; i++) {
 				int x, y;
 				x = scanner.nextInt();
 				y = scanner.nextInt();
-				adj[x - 1].add(y - 1);
-				adj[y - 1].add(x - 1);
+				adj.get(x - 1).add(y - 1);
+				adj.get(y - 1).add(x - 1);
 			}
 			return new MazeValidator(adj).numberOfDisjointSections();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return 666;
+			throw new RuntimeException(e);
 		} finally {
 			if (scanner != null) {
 				scanner.close();
