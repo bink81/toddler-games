@@ -14,10 +14,10 @@ public class MazeGenerator {
 	}
 
 	public boolean[][] generate() {
-		boolean[][] maze = new boolean[x][y];
-		for (int i = 0; i < x; i++) {
-			for (int j = 0; j < y; j++) {
-				maze[i][j] = new Random().nextInt(bound) != 0;
+		boolean[][] maze = new boolean[y][x];
+		for (int j = 0; j < y; j++) {
+			for (int i = 0; i < x; i++) {
+				maze[j][i] = new Random().nextInt(bound) != 0;
 			}
 		}
 		return maze;
