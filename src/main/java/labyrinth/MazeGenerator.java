@@ -3,21 +3,21 @@ package labyrinth;
 import java.util.Random;
 
 public class MazeGenerator {
-	private final int x;
-	private final int y;
-	private final int bound;
+	private final int horizontalSize;
+	private final int verticalSize;
+	private final int roomToWallRatio;
 
-	public MazeGenerator(int x, int y, int bound) {
-		this.x = x;
-		this.y = y;
-		this.bound = bound;
+	public MazeGenerator(int horizontalSize, int verticalSize, int roomToWallRatio) {
+		this.horizontalSize = horizontalSize;
+		this.verticalSize = verticalSize;
+		this.roomToWallRatio = roomToWallRatio;
 	}
 
 	public boolean[][] generate() {
-		boolean[][] maze = new boolean[y][x];
-		for (int j = 0; j < y; j++) {
-			for (int i = 0; i < x; i++) {
-				maze[j][i] = new Random().nextInt(bound) != 0;
+		boolean[][] maze = new boolean[verticalSize][horizontalSize];
+		for (int y = 0; y < verticalSize; y++) {
+			for (int x = 0; x < horizontalSize; x++) {
+				maze[y][x] = new Random().nextInt(roomToWallRatio) != 0;
 			}
 		}
 		return maze;
