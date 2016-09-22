@@ -23,8 +23,8 @@ public class MazeValidator {
 		return currentSectionNumber;
 	}
 
-	private void explore(final int parentNode, final boolean[] isNodeVisited, final int currentSection,
-			final int[] alocatedSections) {
+	private void explore(final int parentNode, final boolean[] isNodeVisited,
+			final int currentSection, final int[] alocatedSections) {
 		isNodeVisited[parentNode] = true;
 		alocatedSections[parentNode] = currentSection;
 		List<Integer> neighborNodes = adjencyMatrix.get(parentNode);
